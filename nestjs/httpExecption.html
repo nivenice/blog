@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用cli生成异常处理器 | 平凡之路</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="仲权的技术博客">
+    
+    <link rel="preload" href="/web/assets/css/0.styles.e28618a7.css" as="style"><link rel="preload" href="/web/assets/js/app.1b880fdf.js" as="script"><link rel="preload" href="/web/assets/js/2.dd74769a.js" as="script"><link rel="preload" href="/web/assets/js/1.76f8b375.js" as="script"><link rel="preload" href="/web/assets/js/29.0e2a187b.js" as="script"><link rel="prefetch" href="/web/assets/js/10.ebde54d0.js"><link rel="prefetch" href="/web/assets/js/11.0e05e1a8.js"><link rel="prefetch" href="/web/assets/js/12.73e12747.js"><link rel="prefetch" href="/web/assets/js/13.1f57af5e.js"><link rel="prefetch" href="/web/assets/js/14.b2766bcc.js"><link rel="prefetch" href="/web/assets/js/15.2d87bde7.js"><link rel="prefetch" href="/web/assets/js/16.a0b77086.js"><link rel="prefetch" href="/web/assets/js/17.3dbcb51f.js"><link rel="prefetch" href="/web/assets/js/18.4c170722.js"><link rel="prefetch" href="/web/assets/js/19.af3a51f0.js"><link rel="prefetch" href="/web/assets/js/20.a728a170.js"><link rel="prefetch" href="/web/assets/js/21.58152d6a.js"><link rel="prefetch" href="/web/assets/js/22.4d277477.js"><link rel="prefetch" href="/web/assets/js/23.f2120687.js"><link rel="prefetch" href="/web/assets/js/24.c2e4ffc8.js"><link rel="prefetch" href="/web/assets/js/25.579442f7.js"><link rel="prefetch" href="/web/assets/js/26.a3ce6907.js"><link rel="prefetch" href="/web/assets/js/27.33bbd116.js"><link rel="prefetch" href="/web/assets/js/28.f193bf30.js"><link rel="prefetch" href="/web/assets/js/3.7337f120.js"><link rel="prefetch" href="/web/assets/js/30.6df2f11d.js"><link rel="prefetch" href="/web/assets/js/31.17ef90e7.js"><link rel="prefetch" href="/web/assets/js/32.8fe7a03c.js"><link rel="prefetch" href="/web/assets/js/33.e3af41f1.js"><link rel="prefetch" href="/web/assets/js/34.6a5bc596.js"><link rel="prefetch" href="/web/assets/js/35.8d13df09.js"><link rel="prefetch" href="/web/assets/js/36.f5ff6ee4.js"><link rel="prefetch" href="/web/assets/js/37.9272c6d5.js"><link rel="prefetch" href="/web/assets/js/38.9c229f46.js"><link rel="prefetch" href="/web/assets/js/39.47e228ce.js"><link rel="prefetch" href="/web/assets/js/4.2c85889e.js"><link rel="prefetch" href="/web/assets/js/5.9a1b805f.js"><link rel="prefetch" href="/web/assets/js/6.e2d69ed0.js"><link rel="prefetch" href="/web/assets/js/7.93fcf6e6.js"><link rel="prefetch" href="/web/assets/js/vendors~docsearch.5a4296f1.js">
+    <link rel="stylesheet" href="/web/assets/css/0.styles.e28618a7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/web/" class="home-link router-link-active"><!----> <span class="site-name">平凡之路</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/web/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/codeGuide/" class="nav-link">
+  代码规范
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/typescript/" class="nav-link">
+  TypeScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Nodejs" class="dropdown-title"><span class="title">Nodejs</span> <span class="arrow down"></span></button> <button type="button" aria-label="Nodejs" class="mobile-dropdown-title"><span class="title">Nodejs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/nestjs/" class="nav-link router-link-active">
+  Nestjs
+</a></li><li class="dropdown-item"><!----> <a href="/web/mysql/" class="nav-link">
+  MYSQL
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/web/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/web/codeGuide/" class="nav-link">
+  代码规范
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/typescript/" class="nav-link">
+  TypeScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Nodejs" class="dropdown-title"><span class="title">Nodejs</span> <span class="arrow down"></span></button> <button type="button" aria-label="Nodejs" class="mobile-dropdown-title"><span class="title">Nodejs</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/web/nestjs/" class="nav-link router-link-active">
+  Nestjs
+</a></li><li class="dropdown-item"><!----> <a href="/web/mysql/" class="nav-link">
+  MYSQL
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/web/nestjs/" aria-current="page" class="sidebar-link">NestJS</a></li><li><a href="/web/nestjs/middleware.html" class="sidebar-link">nestjs 中间件</a></li><li><a href="/web/nestjs/guard.html" class="sidebar-link">nestjs 守卫</a></li><li><a href="/web/nestjs/interecptor.html" class="sidebar-link">nestjs 拦截器</a></li><li><a href="/web/nestjs/httpExecption.html" aria-current="page" class="active sidebar-link">nestjs 异常处理</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/web/nestjs/httpExecption.html#使用cli生成异常处理器" class="sidebar-link">使用cli生成异常处理器</a></li><li class="sidebar-sub-header"><a href="/web/nestjs/httpExecption.html#手动创建异常处理器" class="sidebar-link">手动创建异常处理器</a></li><li class="sidebar-sub-header"><a href="/web/nestjs/httpExecption.html#局部异常" class="sidebar-link">局部异常</a></li><li class="sidebar-sub-header"><a href="/web/nestjs/httpExecption.html#全局异常" class="sidebar-link">全局异常</a></li></ul></li><li><a href="/web/nestjs/typeorm.html" class="sidebar-link">typeorm</a></li><li><a href="/web/nestjs/question.html" class="sidebar-link">问题清单</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="使用cli生成异常处理器"><a href="#使用cli生成异常处理器" class="header-anchor">#</a> 使用cli生成异常处理器</h2> <div class="language-sh extra-class"><pre class="language-sh"><code>nest g f <span class="token punctuation">[</span>error_name<span class="token punctuation">]</span> --no-spec <span class="token parameter variable">--flat</span>
+</code></pre></div><h2 id="手动创建异常处理器"><a href="#手动创建异常处理器" class="header-anchor">#</a> 手动创建异常处理器</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span>
+  ArgumentsHost<span class="token punctuation">,</span>
+  Catch<span class="token punctuation">,</span>
+  ExceptionFilter<span class="token punctuation">,</span>
+  HttpException
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@nestjs/common'</span>
+
+@<span class="token function">Catch</span><span class="token punctuation">(</span>HttpException<span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">HttpExceptionFilter</span><span class="token operator">&lt;</span><span class="token constant">T</span><span class="token operator">&gt;</span> <span class="token keyword">implements</span> <span class="token class-name">ExceptionFilter</span> <span class="token punctuation">{</span>
+  <span class="token function">catch</span><span class="token punctuation">(</span>x<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">,</span> <span class="token literal-property property">host</span><span class="token operator">:</span> ArgumentsHost<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> ctx <span class="token operator">=</span> host<span class="token punctuation">.</span><span class="token function">switchToHttp</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 获取请求上下文</span>
+    <span class="token keyword">const</span> response <span class="token operator">=</span> ctx<span class="token punctuation">.</span><span class="token function">getResponse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> request <span class="token operator">=</span> ctx<span class="token punctuation">.</span><span class="token function">getRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> status <span class="token operator">=</span> exception<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    response<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">code</span><span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">message</span><span class="token operator">:</span> exception<span class="token punctuation">.</span>message
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> 
+</code></pre></div><h2 id="局部异常"><a href="#局部异常" class="header-anchor">#</a> 局部异常</h2> <div class="language-ts extra-class"><div class="highlight-lines"><br><br><br><div class="highlighted"> </div><br><br><br><div class="highlighted"> </div><br><br><br></div><pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> UseFilters <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@nestjs/common'</span>
+
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">Controller</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token decorator"><span class="token at operator">@</span><span class="token function">UseFilters</span></span><span class="token punctuation">(</span>HttpExceptionFilter<span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">TestController</span> <span class="token punctuation">{</span>
+
+  <span class="token decorator"><span class="token at operator">@</span><span class="token function">Get</span></span><span class="token punctuation">(</span><span class="token string">'/test'</span><span class="token punctuation">)</span>
+  <span class="token decorator"><span class="token at operator">@</span><span class="token function">UseFilters</span></span><span class="token punctuation">(</span>HttpExceptionFilter<span class="token punctuation">)</span>
+  <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="全局异常"><a href="#全局异常" class="header-anchor">#</a> 全局异常</h2> <div class="language-ts extra-class"><div class="highlight-lines"><br><br><div class="highlighted"> </div><br></div><pre class="language-ts"><code><span class="token comment">// ... </span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">await</span> NestFactory<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>AppModule<span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">useGlobalFilters</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">HttpExceptionFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/web/nestjs/interecptor.html" class="prev">
+        nestjs 拦截器
+      </a></span> <span class="next"><a href="/web/nestjs/typeorm.html">
+        typeorm
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/web/assets/js/app.1b880fdf.js" defer></script><script src="/web/assets/js/2.dd74769a.js" defer></script><script src="/web/assets/js/1.76f8b375.js" defer></script><script src="/web/assets/js/29.0e2a187b.js" defer></script>
+  </body>
+</html>
