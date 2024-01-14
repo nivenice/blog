@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue 初始化 | 平凡之路</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/blog/fav.png">
+    <meta name="description" content="仲权的技术博客">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.fcd904e3.css" as="style"><link rel="preload" href="/blog/assets/js/app.359f1a9b.js" as="script"><link rel="preload" href="/blog/assets/js/2.58244656.js" as="script"><link rel="preload" href="/blog/assets/js/1.6ba70183.js" as="script"><link rel="preload" href="/blog/assets/js/23.23f538f4.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.0720960b.js"><link rel="prefetch" href="/blog/assets/js/11.2a97faa3.js"><link rel="prefetch" href="/blog/assets/js/12.6b9ed61d.js"><link rel="prefetch" href="/blog/assets/js/13.ebfb1f42.js"><link rel="prefetch" href="/blog/assets/js/14.3e65117c.js"><link rel="prefetch" href="/blog/assets/js/15.2d87bde7.js"><link rel="prefetch" href="/blog/assets/js/16.9ca9aae8.js"><link rel="prefetch" href="/blog/assets/js/17.3dbcb51f.js"><link rel="prefetch" href="/blog/assets/js/18.4c170722.js"><link rel="prefetch" href="/blog/assets/js/19.d8afd0ae.js"><link rel="prefetch" href="/blog/assets/js/20.10e47ab9.js"><link rel="prefetch" href="/blog/assets/js/21.0ad1d6a3.js"><link rel="prefetch" href="/blog/assets/js/22.b7c97fbe.js"><link rel="prefetch" href="/blog/assets/js/24.74ce4790.js"><link rel="prefetch" href="/blog/assets/js/25.1b4a134e.js"><link rel="prefetch" href="/blog/assets/js/26.ca65a1ea.js"><link rel="prefetch" href="/blog/assets/js/27.1a30ad62.js"><link rel="prefetch" href="/blog/assets/js/28.1a7e5d83.js"><link rel="prefetch" href="/blog/assets/js/29.63006c6f.js"><link rel="prefetch" href="/blog/assets/js/3.bc6bba9e.js"><link rel="prefetch" href="/blog/assets/js/30.c87d9ff6.js"><link rel="prefetch" href="/blog/assets/js/31.1e638a18.js"><link rel="prefetch" href="/blog/assets/js/32.a577b191.js"><link rel="prefetch" href="/blog/assets/js/33.fcaec02a.js"><link rel="prefetch" href="/blog/assets/js/34.3988bed2.js"><link rel="prefetch" href="/blog/assets/js/35.e0edbd68.js"><link rel="prefetch" href="/blog/assets/js/36.97469045.js"><link rel="prefetch" href="/blog/assets/js/37.e16efa81.js"><link rel="prefetch" href="/blog/assets/js/38.c722297b.js"><link rel="prefetch" href="/blog/assets/js/39.9fcc0651.js"><link rel="prefetch" href="/blog/assets/js/4.45665f8a.js"><link rel="prefetch" href="/blog/assets/js/40.47444c38.js"><link rel="prefetch" href="/blog/assets/js/41.37d5f0bf.js"><link rel="prefetch" href="/blog/assets/js/42.563c74f9.js"><link rel="prefetch" href="/blog/assets/js/43.80f91e7d.js"><link rel="prefetch" href="/blog/assets/js/44.bfa94044.js"><link rel="prefetch" href="/blog/assets/js/45.b7932cd4.js"><link rel="prefetch" href="/blog/assets/js/46.0dbaf294.js"><link rel="prefetch" href="/blog/assets/js/47.4bef5036.js"><link rel="prefetch" href="/blog/assets/js/48.3fbfb05c.js"><link rel="prefetch" href="/blog/assets/js/49.78a7fca5.js"><link rel="prefetch" href="/blog/assets/js/5.7098d77a.js"><link rel="prefetch" href="/blog/assets/js/50.5a583251.js"><link rel="prefetch" href="/blog/assets/js/51.7b3cde6e.js"><link rel="prefetch" href="/blog/assets/js/52.e01362e6.js"><link rel="prefetch" href="/blog/assets/js/53.d652605c.js"><link rel="prefetch" href="/blog/assets/js/54.62c6f338.js"><link rel="prefetch" href="/blog/assets/js/55.20de2618.js"><link rel="prefetch" href="/blog/assets/js/56.82982d2e.js"><link rel="prefetch" href="/blog/assets/js/57.ee66a668.js"><link rel="prefetch" href="/blog/assets/js/58.aa11e63f.js"><link rel="prefetch" href="/blog/assets/js/59.f3880af5.js"><link rel="prefetch" href="/blog/assets/js/6.0c0a0f39.js"><link rel="prefetch" href="/blog/assets/js/60.f573c3d8.js"><link rel="prefetch" href="/blog/assets/js/61.c5296b07.js"><link rel="prefetch" href="/blog/assets/js/62.b7340ee9.js"><link rel="prefetch" href="/blog/assets/js/63.a3ca940b.js"><link rel="prefetch" href="/blog/assets/js/64.37054b14.js"><link rel="prefetch" href="/blog/assets/js/65.b094ec92.js"><link rel="prefetch" href="/blog/assets/js/66.b2b3b440.js"><link rel="prefetch" href="/blog/assets/js/67.d81db2cd.js"><link rel="prefetch" href="/blog/assets/js/68.24102521.js"><link rel="prefetch" href="/blog/assets/js/69.a40a73b4.js"><link rel="prefetch" href="/blog/assets/js/7.6a854e57.js"><link rel="prefetch" href="/blog/assets/js/70.7474e300.js"><link rel="prefetch" href="/blog/assets/js/71.8b84feff.js"><link rel="prefetch" href="/blog/assets/js/72.72ecaac4.js"><link rel="prefetch" href="/blog/assets/js/73.e570e19f.js"><link rel="prefetch" href="/blog/assets/js/74.d6e3097a.js"><link rel="prefetch" href="/blog/assets/js/75.2dcaef58.js"><link rel="prefetch" href="/blog/assets/js/76.9ca11be9.js"><link rel="prefetch" href="/blog/assets/js/77.f78ebf76.js"><link rel="prefetch" href="/blog/assets/js/78.a1bce55d.js"><link rel="prefetch" href="/blog/assets/js/79.c96bfe4f.js"><link rel="prefetch" href="/blog/assets/js/80.9452d369.js"><link rel="prefetch" href="/blog/assets/js/81.ae990055.js"><link rel="prefetch" href="/blog/assets/js/82.269c3a6a.js"><link rel="prefetch" href="/blog/assets/js/83.b1229eab.js"><link rel="prefetch" href="/blog/assets/js/84.b66845a2.js"><link rel="prefetch" href="/blog/assets/js/85.d4f1f794.js"><link rel="prefetch" href="/blog/assets/js/86.ba861325.js"><link rel="prefetch" href="/blog/assets/js/87.1c1c5e11.js"><link rel="prefetch" href="/blog/assets/js/88.d2a5f4ef.js"><link rel="prefetch" href="/blog/assets/js/89.47f010a5.js"><link rel="prefetch" href="/blog/assets/js/vendors~docsearch.5e19b665.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.fcd904e3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">平凡之路</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="客户端" class="dropdown-title"><span class="title">客户端</span> <span class="arrow down"></span></button> <button type="button" aria-label="客户端" class="mobile-dropdown-title"><span class="title">客户端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/VueSourceCode/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Vue源码
+</a></li><li class="dropdown-item"><!----> <a href="/blog/user/Pinia/" class="nav-link">
+  Pinia
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/t-s/" class="nav-link">
+  TypeScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><span class="title">前端工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工程化" class="mobile-dropdown-title"><span class="title">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/engineering/TravisCI/" class="nav-link">
+  TravisCI
+</a></li><li class="dropdown-item"><!----> <a href="/blog/engineering/cli/" class="nav-link">
+  搭建脚手架
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="服务端" class="dropdown-title"><span class="title">服务端</span> <span class="arrow down"></span></button> <button type="button" aria-label="服务端" class="mobile-dropdown-title"><span class="title">服务端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/service/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/blog/service/Nestjs/" class="nav-link">
+  NestJS
+</a></li><li class="dropdown-item"><!----> <a href="/blog/service/mysql/" class="nav-link">
+  MySQL
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/codeGuide/" class="nav-link">
+  代码规范
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="客户端" class="dropdown-title"><span class="title">客户端</span> <span class="arrow down"></span></button> <button type="button" aria-label="客户端" class="mobile-dropdown-title"><span class="title">客户端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/Vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/blog/VueSourceCode/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Vue源码
+</a></li><li class="dropdown-item"><!----> <a href="/blog/user/Pinia/" class="nav-link">
+  Pinia
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="开发工具" class="dropdown-title"><span class="title">开发工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="开发工具" class="mobile-dropdown-title"><span class="title">开发工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/t-s/" class="nav-link">
+  TypeScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端工程化" class="dropdown-title"><span class="title">前端工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端工程化" class="mobile-dropdown-title"><span class="title">前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/engineering/TravisCI/" class="nav-link">
+  TravisCI
+</a></li><li class="dropdown-item"><!----> <a href="/blog/engineering/cli/" class="nav-link">
+  搭建脚手架
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="服务端" class="dropdown-title"><span class="title">服务端</span> <span class="arrow down"></span></button> <button type="button" aria-label="服务端" class="mobile-dropdown-title"><span class="title">服务端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/service/nodejs/" class="nav-link">
+  NodeJS
+</a></li><li class="dropdown-item"><!----> <a href="/blog/service/Nestjs/" class="nav-link">
+  NestJS
+</a></li><li class="dropdown-item"><!----> <a href="/blog/service/mysql/" class="nav-link">
+  MySQL
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/codeGuide/" class="nav-link">
+  代码规范
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>响应式</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/VueSourceCode/" aria-current="page" class="active sidebar-link">Vue 初始化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/VueSourceCode/#vue-的构造函数" class="sidebar-link">Vue 的构造函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/VueSourceCode/#initinjections" class="sidebar-link">initInjections</a></li><li class="sidebar-sub-header"><a href="/blog/VueSourceCode/#resolveinject" class="sidebar-link">resolveInject</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/VueSourceCode/#initstate" class="sidebar-link">initState</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/VueSourceCode/#initprops" class="sidebar-link">initProps</a></li><li class="sidebar-sub-header"><a href="/blog/VueSourceCode/#initmethods" class="sidebar-link">initMethods</a></li><li class="sidebar-sub-header"><a href="/blog/VueSourceCode/#initdata" class="sidebar-link">initData</a></li><li class="sidebar-sub-header"><a href="/blog/VueSourceCode/#initcomputed" class="sidebar-link">initComputed</a></li><li class="sidebar-sub-header"><a href="/blog/VueSourceCode/#initwatch" class="sidebar-link">initWatch</a></li><li class="sidebar-sub-header"><a href="/blog/VueSourceCode/#vm-watcher" class="sidebar-link">vm.$watcher</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/VueSourceCode/#initprovide" class="sidebar-link">initProvide</a></li></ul></li><li><a href="/blog/VueSourceCode/observe.html" class="sidebar-link">Observe</a></li><li><a href="/blog/VueSourceCode/watcher.html" class="sidebar-link">Watcher</a></li><li><a href="/blog/VueSourceCode/dep.html" class="sidebar-link">Dep</a></li><li><a href="/blog/VueSourceCode/nexttick.html" class="sidebar-link">$nextTick</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>编译</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/VueSourceCode/template/template.html" class="sidebar-link">编译模板</a></li><li><a href="/blog/VueSourceCode/template/complie.html" class="sidebar-link">编译器</a></li><li><a href="/blog/VueSourceCode/template/generate.html" class="sidebar-link">Generate</a></li><li><a href="/blog/VueSourceCode/template/render-help.html" class="sidebar-link">Render-help</a></li><li><a href="/blog/VueSourceCode/template/createComponent.html" class="sidebar-link">createComponent</a></li><li><a href="/blog/VueSourceCode/template/patch.html" class="sidebar-link">patch</a></li><li><a href="/blog/VueSourceCode/template/create-elm.html" class="sidebar-link">createElm</a></li><li><a href="/blog/VueSourceCode/template/patch-node.html" class="sidebar-link">patchNode</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue-初始化"><a href="#vue-初始化" class="header-anchor">#</a> Vue 初始化</h1> <h2 id="vue-的构造函数"><a href="#vue-的构造函数" class="header-anchor">#</a> Vue 的构造函数</h2> <blockquote><p>/src/core/instance/init.js</p></blockquote> <ul><li><strong>Vue</strong>的<code>_init</code>方法大致
+<ol><li>每个 <strong>Vue</strong> 实例，会将所有的属性挂载到<code>vm.$options</code>。</li> <li>初始化组件实例关系，定义 <strong>prototype</strong> 方法。例：<code>$mount</code>、<code>_render</code>、<code>_update</code> ...。初始化自定义事件<code>vm._events</code>。</li> <li>解析插槽信息得到 <code>vm.$slot</code>、<code>vm.$scopedSlots</code>...。</li> <li>使用<code>vm.$mount</code>函数构建 <strong>DOM</strong>。（如果没有使用 <strong>loader</strong> 和 <strong>template-compiler</strong> ,会改写<code>vm.$mount</code>使之生成<code>template</code>对应的<code>render</code>函数）</li></ol></li></ul> <div class="language-ts extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br><br><br></div><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">Vue</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>options<span class="token operator">?</span><span class="token operator">:</span> Object<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> vm<span class="token operator">:</span> Component <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token comment">// 每个 Vue 实例上的 _uid,依次递增, 唯一</span>
+    vm<span class="token punctuation">.</span>_uid <span class="token operator">=</span> uid<span class="token operator">++</span>
+    <span class="token comment">// 代表当前实例已经被 observed</span>
+    vm<span class="token punctuation">.</span>_isVue <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token comment">// 处理组件配置项</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>options <span class="token operator">&amp;&amp;</span> options<span class="token punctuation">.</span>_isComponent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">/**
+       * _isComponent 估计 components 属性或者 router-view 中会赋值为 true
+       * 每个子组件初始化走这，做了一些性能优化
+       * 将每个实例上的深层次属性放到 $options 选项中，以提高代码的执行效率
+      */</span>
+      <span class="token function">initInternalComponent</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 初始化根组件时走这里，合并 Vue 的全局配置到根组件的局部配置</span>
+      vm<span class="token punctuation">.</span>$options <span class="token operator">=</span> <span class="token function">mergeOptions</span><span class="token punctuation">(</span>
+        <span class="token function">resolveConstructorOptions</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>constructor<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        options <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        vm
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'production'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 设置代理，将vm实例上的属性代理到vm._renderProxy</span>
+      <span class="token function">initProxy</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      vm<span class="token punctuation">.</span>_renderProxy <span class="token operator">=</span> vm
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// expose(暴露) real self</span>
+    vm<span class="token punctuation">.</span>_self <span class="token operator">=</span> vm
+    <span class="token comment">// 初始化组件实例关系属性，如 $parent、$children、$root、$refs 等</span>
+    <span class="token function">initLifecycle</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span>
+    <span class="token comment">// 初始化自定义事件</span>
+    <span class="token function">initEvents</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span>
+    <span class="token comment">// 解析插槽信息，得到 $slots，$createElement</span>
+    <span class="token function">initRender</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span>
+    <span class="token comment">// 调用 beforeCreate 钩子函数</span>
+    <span class="token function">callHook</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> <span class="token string">'beforeCreate'</span><span class="token punctuation">)</span>
+    <span class="token comment">// 初始化组件的 inject 配置型，得到 result[key] = val 形式的配置对象，然后对数据进行响应式处理，然后将每个key挂载到自身实例上</span>
+    <span class="token function">initInjections</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span>
+    <span class="token comment">// 处理响应式数据。props，data，computed，watch，methods</span>
+    <span class="token function">initState</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 解析组件配置项上的 provide 对象，将其挂载到 vm._provided 属性上</span>
+    <span class="token function">initProvide</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span>
+    <span class="token comment">// 调用created钩子函数</span>
+    <span class="token function">callHook</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> <span class="token string">'created'</span><span class="token punctuation">)</span>
+    <span class="token comment">// 如果发现配置项上有el选项，则自动调用$mount方法</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>el<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      vm<span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>el<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>   
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="initinjections"><a href="#initinjections" class="header-anchor">#</a> initInjections</h3> <blockquote><p>/src/core/instance/inject</p></blockquote> <div class="language-ts extra-class"><div class="highlight-lines"><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br></div><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">initInjections</span> <span class="token punctuation">(</span>vm<span class="token operator">:</span> Component<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 解析 inject 配置项，然后从祖代组件的配置中找到 配置项中每一个 key 对应的 value</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">resolveInject</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>inject<span class="token punctuation">,</span> vm<span class="token punctuation">)</span>
+  <span class="token comment">// 对获得 inject 对象挂载到 this 上,同时做数据响应处理</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">toggleObserving</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>key <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">defineReactive</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> key<span class="token punctuation">,</span> result<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token function">toggleObserving</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="resolveinject"><a href="#resolveinject" class="header-anchor">#</a> resolveInject</h3> <blockquote><p>/src/core/instance/inject</p></blockquote> <div class="language-ts extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br><br><br><br></div><pre class="language-ts"><code><span class="token comment">// inject 对象在合并选项是对组件配置做了标准化处理，所以 inject 的结构是一样的</span>
+<span class="token keyword">interface</span> <span class="token class-name">Inject</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">]</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    from<span class="token operator">:</span> <span class="token builtin">string</span>
+    <span class="token keyword">default</span><span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">unknown</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">resolveInject</span> <span class="token punctuation">(</span>inject<span class="token operator">:</span> Inject<span class="token punctuation">,</span> vm<span class="token operator">:</span> Component<span class="token punctuation">)</span><span class="token operator">:</span> Object <span class="token operator">|</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>inject<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> result <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> keys <span class="token operator">=</span> hasSymbol
+      <span class="token operator">?</span> Reflect<span class="token punctuation">.</span><span class="token function">ownKeys</span><span class="token punctuation">(</span>inject<span class="token punctuation">)</span>
+      <span class="token operator">:</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>inject<span class="token punctuation">)</span>
+    
+    <span class="token comment">// 遍历</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> keys<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> key <span class="token operator">=</span> keys<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+      <span class="token comment">// 跳过 __ob__ 对象</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>key <span class="token operator">===</span> <span class="token string">'__ob__'</span><span class="token punctuation">)</span> <span class="token keyword">continue</span>
+      <span class="token comment">// 处理 form 属性获取 provideKey</span>
+      <span class="token keyword">const</span> provideKey <span class="token operator">=</span> inject<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">.</span>form
+      <span class="token keyword">let</span> source <span class="token operator">=</span> vm
+      <span class="token comment">// 遍历所有祖代实例，找到最近的祖代实例中的 provide 中对应 key 的值</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>source<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>source<span class="token punctuation">.</span>provide <span class="token operator">&amp;&amp;</span> <span class="token function">hasOwn</span><span class="token punctuation">(</span>source<span class="token punctuation">.</span>_provide<span class="token punctuation">,</span> provideKey<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 在 initProvide 函数中会将 provide 对象，将其挂载在 source._provided 属性上</span>
+          result<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> source<span class="token punctuation">.</span>_provided<span class="token punctuation">[</span>provideKey<span class="token punctuation">]</span>
+          <span class="token keyword">break</span>
+        <span class="token punctuation">}</span>
+        source <span class="token operator">=</span> source<span class="token punctuation">.</span>$parent
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 如果没找到对应的 inject, 则使用 default 属性</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>source<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'default'</span> <span class="token keyword">in</span> inject<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> proviedeDefault <span class="token operator">=</span> inject<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">.</span>default
+        result<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> provideDefault <span class="token operator">===</span> <span class="token string">'function'</span>
+          <span class="token operator">?</span>  <span class="token function">provideDefault</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span>
+          <span class="token operator">:</span> provideDefault
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="initstate"><a href="#initstate" class="header-anchor">#</a> initState</h2> <blockquote><p>/src/core/instance/state</p></blockquote> <ul><li>依顺序分别处理
+<ul><li><a href="#initprops">initProps</a>: 为<code>props</code>各个属性实现响应式</li> <li><a href="#initmethods">initMethods</a>: 保证<code>methods</code>中都必须是一个函数，同时<strong>key</strong>不会和其他属性冲突</li> <li><a href="#initdata">initData</a>: 进行<a href="/blog/VueSourceCode/observe.html">observe</a>处理，进行依赖收集</li> <li><a href="#initcomputed">initComputed</a>: 为<code>computed</code>每个属性创建懒加载 <strong>Wathcer</strong> <ol><li>通过<strong>Watcher</strong>的<code>get()</code>获取值，并将得到的值缓存与 <strong>Wathcer</strong> 的<code>value</code>属性(<code>dirty</code>为<code>false</code>)。</li> <li>通过<code>definePeoperty</code>代理返回返回<code>watcher.value</code>。</li> <li>当它依赖的数据发生改变。 会将自身的 <strong>Watcher</strong> 的<code>dirty</code>属性改为 <code>true</code>。此时会重新再运行<code>get()</code>函数，并收集依赖。</li></ol></li> <li><a href="#initwatch">initWatch</a>: 将 <strong>Watcher</strong> 都放入到<code>vm._watchers</code>数组中</li></ul></li></ul> <div class="language-ts extra-class"><div class="highlight-lines"><br><br><br><br><div class="highlighted"> </div><br><div class="highlighted"> </div><br><br><div class="highlighted"> </div><br><br><div class="highlighted"> </div><br><br><div class="highlighted"> </div><br><br><br><br><br><div class="highlighted"> </div><br><br><br></div><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">initState</span> <span class="token punctuation">(</span>vm<span class="token operator">:</span> Component<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  vm<span class="token punctuation">.</span>_watchers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">const</span> opts <span class="token operator">=</span> vm<span class="token punctuation">.</span>$options
+  <span class="token comment">// 处理 props</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>opts<span class="token punctuation">.</span>props<span class="token punctuation">)</span> <span class="token function">initProps</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> opts<span class="token punctuation">.</span>props<span class="token punctuation">)</span>
+  <span class="token comment">// 处理 methods</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>opts<span class="token punctuation">.</span>methods<span class="token punctuation">)</span> <span class="token function">initMethods</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> opts<span class="token punctuation">.</span>methods<span class="token punctuation">)</span>
+  <span class="token comment">// 处理 data，所以在 data 里能访问 props，但是拜托希望别这么用</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>opts<span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">initData</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 放在下一章节</span>
+    <span class="token function">observe</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span>_data <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">true</span> <span class="token comment">/* asRootData */</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 处理 computed</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>opts<span class="token punctuation">.</span>computed<span class="token punctuation">)</span> <span class="token function">initComputed</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> opts<span class="token punctuation">.</span>computed<span class="token punctuation">)</span>
+  <span class="token comment">/**
+   * 处理 watch,为每个 key 创建 watcher 实例，key 与 watcher 实例可能是一对多的管理
+   * 如果配置了 immediate 则会立即执行回调函数
+  */</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>opts<span class="token punctuation">.</span>watch <span class="token operator">&amp;&amp;</span> opts<span class="token punctuation">.</span>watch <span class="token operator">!==</span> nativeWatch<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">initWatch</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> opts<span class="token punctuation">.</span>watch<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="initprops"><a href="#initprops" class="header-anchor">#</a> initProps</h3> <ul><li>处理props对象，为每个属性设置响应式，并将其代理到实例 vm 上</li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">initProps</span> <span class="token punctuation">(</span>vm<span class="token operator">:</span> Component<span class="token punctuation">,</span> propsOptions<span class="token operator">:</span> Object<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> propsData <span class="token operator">=</span> vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>propsData <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">const</span> props <span class="token operator">=</span> vm<span class="token punctuation">.</span>_props <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token comment">// 缓存 props 的每个key，性能优化</span>
+  <span class="token keyword">const</span> keys <span class="token operator">=</span> vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>_propKeys <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">const</span> isRoot <span class="token operator">=</span> <span class="token operator">!</span>vm<span class="token punctuation">.</span>$parent
+  <span class="token comment">// 因为根组件的 props 是不会改变的 所以不需要收集根组件的 props 的依赖</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isRoot<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">toggleObserving</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> propsOptions<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    keys<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+    <span class="token comment">// 获取 props[key] 的正真的值</span>
+    <span class="token comment">// propsOptions = { value: { type: string, default: '' } }</span>
+    <span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token function">validateProp</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> propsOptions<span class="token punctuation">,</span> propsData<span class="token punctuation">,</span> vm<span class="token punctuation">)</span>
+    <span class="token comment">// 为每个属性设置响应式</span>
+    <span class="token function">defineReactive</span><span class="token punctuation">(</span>props<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>key <span class="token keyword">in</span> vm<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">proxy</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">_props</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">toggleObseving</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="initmethods"><a href="#initmethods" class="header-anchor">#</a> initMethods</h3> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">initMethods</span> <span class="token punctuation">(</span>vm<span class="token operator">:</span> Component<span class="token punctuation">,</span> methods<span class="token operator">:</span> Object<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// initProps 是由 $options.propsData 取，这里从 props 取是为了防止触发 props 的 get 与 set</span>
+  <span class="token keyword">const</span> props <span class="token operator">=</span> vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>props
+  <span class="token comment">// 遍历 methods 放置 key 重复</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> methods<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'production'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> methods<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">!==</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">warn</span><span class="token punctuation">(</span><span class="token comment">/* ... */</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>props <span class="token operator">&amp;&amp;</span> <span class="token function">hasOwn</span><span class="token punctuation">(</span>props<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">warn</span><span class="token punctuation">(</span><span class="token comment">/* key与props中key重复 */</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>key <span class="token keyword">in</span> vm<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">isReserved</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">warn</span><span class="token punctuation">(</span><span class="token comment">/* key与vue中定义的属性相同 */</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    vm<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">typeof</span> methods<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">!==</span> <span class="token string">'function'</span> <span class="token operator">?</span> noop <span class="token operator">:</span> <span class="token function">bind</span><span class="token punctuation">(</span>methods<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span> vm<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="initdata"><a href="#initdata" class="header-anchor">#</a> initData</h3> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">initData</span> <span class="token punctuation">(</span>vm<span class="token operator">:</span> Component<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> data <span class="token operator">=</span> vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>data
+  data <span class="token operator">=</span> vm<span class="token punctuation">.</span>_data <span class="token operator">=</span> <span class="token keyword">typeof</span> data <span class="token operator">===</span> <span class="token string">'function'</span>
+    <span class="token operator">?</span> <span class="token function">getData</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> vm<span class="token punctuation">)</span>
+    <span class="token operator">:</span> data <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isPlainObject</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果返回的data不是对象 报错</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> keys <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+  <span class="token keyword">const</span> props <span class="token operator">=</span> vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>props
+  <span class="token keyword">const</span> methods <span class="token operator">=</span> vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>methods
+  <span class="token keyword">let</span> i <span class="token operator">=</span> keys<span class="token punctuation">.</span>length
+  <span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> key <span class="token operator">=</span> keys<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token comment">// 省略与 props 和 methods 中 key 的去重处理</span>
+    <span class="token function">observe</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="initcomputed"><a href="#initcomputed" class="header-anchor">#</a> initComputed</h3> <ul><li>为所有 <code>computed[key]</code> 创建 <a href="./watcher">watcher</a> 实例，默认是懒执行。</li></ul> <div class="language-ts extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">initComputed</span> <span class="token punctuation">(</span>vm<span class="token operator">:</span> Component<span class="token punctuation">,</span> computed<span class="token operator">:</span> Object<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> wathcers <span class="token operator">=</span> vm<span class="token punctuation">.</span>_computedWatchers <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+  <span class="token comment">// SSR 服务端渲染</span>
+  <span class="token keyword">const</span> isSSR <span class="token operator">=</span> <span class="token function">isServerRendering</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  
+  <span class="token comment">// 遍历computed </span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> computed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 获取对应的 getter 函数</span>
+    <span class="token keyword">const</span> userDef <span class="token operator">=</span> computed<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    <span class="token keyword">const</span> getter <span class="token operator">=</span> <span class="token keyword">typeof</span> userDef <span class="token operator">===</span> <span class="token string">'function'</span> <span class="token operator">?</span> userDef<span class="token operator">:</span> userDef<span class="token punctuation">.</span>get
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>getter <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token function">warn</span><span class="token punctuation">(</span><span class="token comment">/* error */</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isSSR<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      watchers<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watcher</span><span class="token punctuation">(</span>
+        vm<span class="token punctuation">,</span>
+        getter <span class="token operator">||</span> noop<span class="token punctuation">,</span>
+        noop<span class="token punctuation">,</span>
+        computedWatcherOptions <span class="token comment">// 默认是懒执行</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>key <span class="token keyword">in</span> vm<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">defineComputed</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> key<span class="token punctuation">,</span> userDef<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">warn</span><span class="token punctuation">(</span><span class="token comment">/* 重复 */</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">defineComputed</span> <span class="token punctuation">(</span>target<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> key<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> userDef<span class="token operator">:</span> Object <span class="token operator">|</span> <span class="token builtin">Function</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> userDef <span class="token operator">===</span> <span class="token string">'funciton'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* 如果是服务端渲染会进行createGetterInvoker(userDef)处理 */</span>
+    sharedPropertyDefinition<span class="token punctuation">.</span>get <span class="token operator">=</span> <span class="token function">createComputedGetter</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 一般用户定义的是不会指定 cache 属性, 如果 cache: false，则会创建空的 getter 函数</span>
+    sharedPropertyDefinition<span class="token punctuation">.</span>get <span class="token operator">=</span> userDef<span class="token punctuation">.</span>get <span class="token operator">&amp;&amp;</span> userDef<span class="token punctuation">.</span>cache <span class="token operator">!==</span> <span class="token boolean">false</span>
+      <span class="token operator">?</span> <span class="token function">createComputedGetter</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+      <span class="token operator">:</span> noop
+    sharedPropertyDefinition<span class="token punctuation">.</span>set <span class="token operator">=</span> userDef<span class="token punctuation">.</span>set <span class="token operator">||</span> noop     
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 如果没有设置 set 会进行warn</span>
+  <span class="token comment">// 绑定</span>
+  Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">,</span> sharedPropertyDefinition<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">createComputedGetter</span> <span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// computed 缓存, 当获取值时会触发 get 方法</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">computedGetter</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 通过key 去寻找对应的 Watcher</span>
+    <span class="token keyword">const</span> watcher <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_computedWatchers <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_computedWatchers<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>wathcer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">/**
+       * computed 中被引用的值发生变化的时候
+       * 会将 computed 的 watcher 的 dirty 属性设为 true
+       * 代表需要重新调用一次 handler 函数来得到最新的值
+       * 否则直接返回缓存的 watcher.value
+      */</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>watcher<span class="token punctuation">.</span>dirty<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// evaluate 之后会再次将 dirty 设为 false</span>
+        watcher<span class="token punctuation">.</span><span class="token function">evaluate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// 依赖收集</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>Dep<span class="token punctuation">.</span>target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        watcher<span class="token punctuation">.</span><span class="token function">depend</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> watcher<span class="token punctuation">.</span>value
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="initwatch"><a href="#initwatch" class="header-anchor">#</a> initWatch</h3> <ul><li>处理<strong>watch</strong>对象，通过<code>vm.$watch</code>为每个属性创建一个<a href="./watcher">Watcher</a></li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// watch的几种使用方式</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">watch</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">key1</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">newVal<span class="token punctuation">,</span> oldVal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">/* handler */</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">key2</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">handler</span> <span class="token punctuation">(</span><span class="token parameter">newVal<span class="token punctuation">,</span> oldVal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">/* handler */</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">deep</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">immediate</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">key3</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>methodName<span class="token punctuation">,</span>
+      <span class="token function">fucntion</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">/* handler */</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token function">handler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">/* handler */</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">deep</span><span class="token operator">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string-property property">'key4'</span><span class="token operator">:</span> <span class="token string">'methodsName'</span><span class="token punctuation">,</span> <span class="token comment">// vm 上的 methods 方法名</span>
+    <span class="token string-property property">'props.key5'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">handler</span> <span class="token punctuation">(</span><span class="token parameter">newVal<span class="token punctuation">,</span> oldVal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">/* handler */</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><div class="language-ts extra-class"><div class="highlight-lines"><br><br><br><br><br><br><div class="highlighted"> </div><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br></div><pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">initWatch</span> <span class="token punctuation">(</span>vm<span class="token operator">:</span> Component<span class="token punctuation">,</span> watch<span class="token operator">:</span> Object<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 为每个 key 都调用 createWatcher</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> key <span class="token keyword">in</span> watch<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> handler <span class="token operator">=</span> watch<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>handler<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> handler<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">createWatcher</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> key<span class="token punctuation">,</span> handler<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">createWatcher</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> key<span class="token punctuation">,</span> handler<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">createWatcher</span> <span class="token punctuation">(</span>
+  vm<span class="token operator">:</span> Component<span class="token punctuation">,</span>
+  exOrFn<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">Function</span>
+  handler<span class="token operator">:</span> <span class="token builtin">any</span>
+  options<span class="token operator">?</span><span class="token operator">:</span> Object
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 如果 handler 为对象，则获取其中的 handler 选项的值</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPlainObject</span><span class="token punctuation">(</span>handler<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    options <span class="token operator">=</span> handler
+    handler <span class="token operator">=</span> handler<span class="token punctuation">.</span>handler
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 如果为 string，则获取 this[handler] 方法</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> handler <span class="token operator">===</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    handler <span class="token operator">=</span> vm<span class="token punctuation">[</span>handler<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> vm<span class="token punctuation">.</span><span class="token function">$watch</span><span class="token punctuation">(</span>expOrFn<span class="token punctuation">,</span> handler<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="vm-watcher"><a href="#vm-watcher" class="header-anchor">#</a> vm.$watcher</h3> <p><a href="./watcher">Watcher对象</a></p> <div class="language-ts extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-ts"><code>Vue<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$watch</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>
+  expOrFn<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">Function</span><span class="token punctuation">,</span>
+  cb<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span>
+  options<span class="token operator">?</span><span class="token operator">:</span> Object
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> vm<span class="token operator">:</span> Component <span class="token operator">=</span> <span class="token keyword">this</span>
+  <span class="token comment">// 是对象就处理成函数再进行处理</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isPlainObject</span><span class="token punctuation">(</span>cb<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">createWatcher</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> expOrFn<span class="token punctuation">,</span> cb<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  
+  options <span class="token operator">=</span> options <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  options<span class="token punctuation">.</span>user <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token comment">// 标记 此用户创建的 wathcer</span>
+  <span class="token keyword">const</span> watcher <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Watcher</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> expOrFn<span class="token punctuation">,</span> cb<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+  <span class="token comment">// 如果设置了 immediate 则立即执行回调函数</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>options<span class="token punctuation">.</span>immdiate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token function">cb</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> wathcer<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// doSomthing...</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 用来解除监听</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">unwatchFn</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    watcher<span class="token punctuation">.</span><span class="token function">teardown</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="initprovide"><a href="#initprovide" class="header-anchor">#</a> initProvide</h2> <ul><li>/src/core/instance/inject</li> <li><code>provide</code>基本属性值是非响应式的</li></ul> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// 将 provide 对象，将其挂载在 vm._provided 属性上</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">initProvide</span> <span class="token punctuation">(</span>vm<span class="token operator">:</span> Component<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> provide <span class="token operator">=</span> vm<span class="token punctuation">.</span>$options<span class="token punctuation">.</span>provide
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>provide<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// provide 属性可以是一个函数，也可以是一个对象</span>
+    vm<span class="token punctuation">.</span>_provided <span class="token operator">=</span> <span class="token keyword">typeof</span> provide <span class="token operator">===</span> <span class="token string">'function'</span>
+      <span class="token operator">?</span> <span class="token function">provide</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>vm<span class="token punctuation">)</span>
+      <span class="token operator">:</span> provide 
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/blog/VueSourceCode/observe.html">
+        Observe
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.359f1a9b.js" defer></script><script src="/blog/assets/js/2.58244656.js" defer></script><script src="/blog/assets/js/1.6ba70183.js" defer></script><script src="/blog/assets/js/23.23f538f4.js" defer></script>
+  </body>
+</html>
